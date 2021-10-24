@@ -35,6 +35,13 @@ const userShema = new mongoose.Schema({
       },
     },
   ],
+  todoLists: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'ToDoList',
+    },
+  ],
 });
 
 userShema.method('toJSON', function () {
